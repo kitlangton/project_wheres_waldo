@@ -1,0 +1,9 @@
+{{#link-to "photos.index"}}All Photos{{/link-to}}
+
+{{#each model as |photo|}}
+<p>
+{{#link-to "photos.play" photo}}{{photo.name}}{{/link-to}}
+</p>
+{{/each}}
+
+{{outlet}}
