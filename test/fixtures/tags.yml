@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  photos_id: 
-  characters_id: 
-  name: MyString
+  character_id: 
+  photo_id: 
+  x: 1
+  'y': 1
 
 two:
-  photos_id: 
-  characters_id: 
-  name: MyString
+  character_id: 
+  photo_id: 
+  x: 1
+  'y': 1

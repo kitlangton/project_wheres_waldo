@@ -9,5 +9,5 @@
 10.times do
   photo = Photo.create(name: "Photo")
   character = photo.characters.create(name: "Char")
-  photo.tags.create(name: "Tag", character: character)
+  photo.tags.create(character: character, x: rand(50), y: rand(50))
 end

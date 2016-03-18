@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318214620) do
+ActiveRecord::Schema.define(version: 20160318221233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: true do |t|
-    t.integer  "photo_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "photo_id"
   end
 
   add_index "characters", ["photo_id"], name: "index_characters_on_photo_id", using: :btree
@@ -32,14 +32,15 @@ ActiveRecord::Schema.define(version: 20160318214620) do
   end
 
   create_table "tags", force: true do |t|
-    t.integer  "photos_id"
-    t.integer  "characters_id"
-    t.string   "name"
+    t.integer  "character_id"
+    t.integer  "photo_id"
+    t.integer  "x"
+    t.integer  "y"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tags", ["characters_id"], name: "index_tags_on_characters_id", using: :btree
-  add_index "tags", ["photos_id"], name: "index_tags_on_photos_id", using: :btree
+  add_index "tags", ["character_id"], name: "index_tags_on_character_id", using: :btree
+  add_index "tags", ["photo_id"], name: "index_tags_on_photo_id", using: :btree
 
 end
